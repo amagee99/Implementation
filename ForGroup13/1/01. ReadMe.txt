@@ -1,0 +1,11 @@
+ReadMe
+
+IDE used  - IntelliJ
+
+Attached .zip file contains the Java files and a summary of the test cases and functionalities
+
+Test suite uses a MySQL database connection; ensure JAR files are downloaded/available to run.
+
+Most tests cases run independently. The OnboardingTrainingAssignerTest and TrainingRecordViewerTest interact with other classe methods and the Main Class.
+
+

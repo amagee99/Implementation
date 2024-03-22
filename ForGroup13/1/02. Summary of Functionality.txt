@@ -1,0 +1,40 @@
+The software is designed to manage the onboarding training process for new employees in for a corporate company. 
+
+1.	Main class (Main.java) provides a UI through the console to interact with the code. Users can assign onboarding training to new employees or view the 	training record of existing employees.
+
+2.	OnboardingTrainingAssigner class (OnboardingTrainingAssigner.java) assigns onboarding training to new hires based on their department. It checks if the 	department has access to assign training, retrieves applicable training courses, and assigns them to the new employee.
+
+3.	TrainingRecordViewer class (TrainingRecordViewer.java) lets you view the training record of an employee. It retrieves the employee's training record from 	the database and displays it to the user.
+
+4.	Test Cases: JUnit test cases (TrainingRecordViewerTest.java and OnboardingTrainingAssignerTest.java) ensure the correctness and robustness of the 	application.
+
+	a.	testViewTrainingRecord_validEmployeeId_multipleCourses: This test case verifies that the viewTrainingRecord method in the TrainingRecordViewer 			class correctly retrieves and displays the training record for an employee who has multiple assigned courses. It checks if the output matches the 		expected format and content.
+
+	b.	testViewTrainingRecord_invalidEmployeeIdOrNoCourses: This test case covers scenarios where an invalid employee ID is provided or the employee has 		no assigned courses. It ensures that the method handles such cases gracefully, displaying an appropriate message to the user.
+
+	c.	testCheckExamResult_passingScore: This test case verifies that the checkExamResult method in the TrainingRecordViewer class correctly determines 		the training result (pass/fail) based on the provided exam score. It checks if the method returns the expected result for a passing score.
+
+	d.	testCheckExamResult_failingScore: This test case checks the checkExamResult method for a failing exam score. It ensures that the method correctly 		identifies a failing score and returns the expected result.
+
+	e.	testCheckExamResult_invalidScore: This test case verifies that the checkExamResult method throws an IllegalArgumentException when an invalid exam 		score (outside the valid range) is provided. It ensures that the method validates the input and handles invalid scores appropriately.
+
+	f.	testAssignOnboardingTraining_ForNewHires: This test case checks the assignOnboardingTraining method in the OnboardingTrainingAssigner class for 		correctly assigning onboarding training to a new hire. It verifies that the training is correctly assigned to the employee in the database.
+
+	g.	testAssignOnboardingTraining_DepartmentSpecific: This test case ensures that the assignOnboardingTraining method assigns training courses that 			are specific to the employee's department. It checks if the method retrieves and assigns the correct courses based on the department.
+
+	h.	testAssignOnboardingTraining_DepartmentAdministratorAssignment: This test case verifies that only a department administrator can assign training 		to employees in their department. It checks if the method correctly assigns training when called by a department administrator and handles the 			case when called by a non-administrator.
+
+	i.	testAssignOnboardingTraining_BasedOnDepartmentOrJobTitle: This test case covers scenarios where training assignments are based on the employee's 		department or job title. It checks if the method assigns the correct training courses based on these criteria.
+
+	j.	AssignmentTest1.java ensures that instructors or managers are able to assign actvities or training that needs to be completed. This class is able 		to test	the skeleton code that was created.
+
+	k.	CompletionNotoficationTest.java ensures that the assigned employee is able to recevie a completion notice at the email that has been provided.
+	
+	l.	FeedbackRedirectionExamTest.java ensures that employees are able to recevie feedback on their exam and let them know who to contact.
+	
+	m.	NewHireInfoTest.java ensures that complete new hire information is uploaded to the system or sends an error
+
+	n.	SendNewHireEmailTest.java ensures that any new hire will recevie a welcome email once their HR information is correctly uploaded.
+
+	o.	TranscriptTest.java ensures that there is a record on all the activities that are taken.
+
