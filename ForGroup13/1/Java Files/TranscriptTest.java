@@ -13,7 +13,7 @@ class TranscriptTest {
     public void setUp()
     {
         employee = new Employee("SWE6673");
-        Activity onBoarding = new Actvity("Onboarding");
+        Activity onBoarding = new Activity("Onboarding");
         Activity cyberSecurity = new Activity("Cyber Security");
         employee.addCompletedActivity(onBoarding);
         employee.addCompletedActivity(cyberSecurity);
