@@ -20,3 +20,4 @@ class NewHireInfoUpdateTest {
         assertEquals("Info not complete", result);
     }
 }
+

@@ -1,7 +1,11 @@
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AssignmentTest1 {
-    private Assignment assignment;
+    ArrayList<String> notificationList = new ArrayList<>();
+    CompletionNotification notif = new CompletionNotification(notificationList);
+    private Assignment assignment = new Assignment("SWE6673", "Placeholder", "Placeholder", "Placeholder", "Placeholder", notif);
 
     @org.junit.jupiter.api.Test
     void assignTask()
@@ -23,7 +27,9 @@ class AssignmentTest1 {
     @org.junit.jupiter.api.Test
     void getDetails()
     {
-        String expectedDetails = "Assignment{assignmentID='SWE6673', assignee='Beth Paul' task='Onboarding Training', deadline='2024-03-15', status='Completed'}";
+        assignment.assignTask("Paul Beth", "Onboarding Training", "2024-03-15");
+        assignment.updateStatus("Completed");
+        String expectedDetails = "Assignment{assignmentID='SWE6673', assignee='Paul Beth', task='Onboarding Training', deadline='2024-03-15', status='Completed'}";
         String actualDetails = assignment.getDetails();
         assertEquals(expectedDetails, actualDetails, "THe details should match the expected string.");
     }
@@ -31,6 +37,7 @@ class AssignmentTest1 {
     @org.junit.jupiter.api.Test
     void getStatus()
     {
+        assignment.assignTask("Example", "ExampleTask", "ExampleDate");
         String initialStatus = assignment.getStatus();
         assertEquals("Assigned", initialStatus, "Initially, the assignment status should be 'Assigned'.");
         assignment.updateStatus("Completed");
