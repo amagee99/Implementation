@@ -16,13 +16,4 @@ public class Transcript
 	}
 
 }
-/* Tester's comments */
-//had to set up an employee class with an activity list as it did not exist
-//test creates an instances of an employee and adds two activities and a name
-//had to add an employee field for transcript and constructor
-//for one of the functions in the unit test, Activity was misspelled so I fixed that
-//test file asks for the activity list in string format, so I did this in the function and returned a list of activity names
-//tests if activity list contains the names of the added activities
-//haven't been able to run yet, but I'm unsure if the assertEquals function will work as it's looking for the list to equal 
-//the integer 2 instead of contain two items as intended
 

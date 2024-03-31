@@ -27,6 +27,6 @@ class TranscriptTest {
         List<String> completedActivities = transcript.viewCompletedActivities();
         assertTrue(completedActivities.contains("Onboarding"), "Completed activities should including onboarding");
         assertTrue(completedActivities.contains("Cyber Security"), "Completed activities should include Cyber Security");
-        assertEquals(2, completedActivities, "There should be two completed activities.");
+        assertEquals(2, completedActivities.size(), "There should be two completed activities.");
     }
 }

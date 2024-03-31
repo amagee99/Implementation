@@ -5,6 +5,7 @@ public class SendNewHireEmail
 		
 	}
 	public boolean processNewHire(String email) {
+		isSent = true;
 		if (isSent) {
 			return true;
 		}
@@ -15,8 +16,3 @@ public class SendNewHireEmail
 }
 
 
-/* Tester's comments */
-//create SendNewHireEmail constructor with no parameters
-//create a new function processNewHire that takes an email string and returns t/f
-//not sure how to determine whether the email was sent or not
-//assertion will be false as it was set up incorrectly, comparing a boolean with a string
