@@ -1,11 +1,21 @@
 import java.util.Scanner;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
-
+import java.sql.Statement;
 public class Main {
 
 public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
+        
+        try (Connection connection = DatabaseConnection.getConnection()) {
+            String sql = "CREATE TABLE IF NOT EXISTS users (" +
+                         "id SERIAL PRIMARY KEY," +
+                         "username VARCHAR(50) NOT NULL," +
+                         "email VARCHAR(100) NOT NULL)";
+        } catch (SQLException e) {
+            System.err.println("Error establishing database connection: " + e.getMessage());
+        }
         int choice;
         do {
         System.out.println("\nMenu:");
@@ -42,7 +52,7 @@ public static void main(String[] args) {
         System.out.print("Enter employee ID: ");
         String employeeId = scanner.nextLine();
 
-        OnboardingTrainingAssigner.assignOnboardingTraining(department, employeeId);
+        //OnboardingTrainingAssigner.assignOnboardingTraining(department, employeeId);
     }
 
     private static void viewTrainingRecord() throws SQLException {

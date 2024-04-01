@@ -8,9 +8,9 @@ import java.sql.SQLException;
 
 public class OnboardingTrainingAssignerTest {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/lms_system";
+    private static final String URL = "jdbc:oracle:thin:@localhost:4331:employee_training";
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "Cronan103!";
+    private static final String PASSWORD = "admin";
 
     @Test
     public void testAssignOnboardingTraining_ForNewHires() throws SQLException {
@@ -18,7 +18,7 @@ public class OnboardingTrainingAssignerTest {
         OnboardingTrainingAssigner.assignOnboardingTraining("IT", "EMP123");
 
         // Verifies that training is correctly assigned
-        try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+        try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(
                      "SELECT * FROM employee_training WHERE employee_id = 'EMP123'")) {
             try (ResultSet rs = stmt.executeQuery()) {
