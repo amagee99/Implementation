@@ -1,5 +1,6 @@
 public class EmployeeInfo
 {
+	//this was from the original implementation we did not create, there was no test file
     private final String ID;
     private final List<Activity> completedActivity;
 

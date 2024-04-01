@@ -24,7 +24,7 @@ public class TrainingRecordViewerTest {
         // Capture the output stream to verify printed messages
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
-
+        
         viewer.viewTrainingRecord(employeeId);
 
         // Assert expected output based on the test case scenario
@@ -67,7 +67,7 @@ public class TrainingRecordViewerTest {
     }
 
     @Test  //checks exam results with failing score
-    public void testCheckExamResult_failingScore() {
+    public void testCheckExamResult_failingScore() throws SQLException {
         String employeeId = "EMP123";
         String courseTitle = "Course 1";
         int score = 65;
@@ -85,3 +85,5 @@ public class TrainingRecordViewerTest {
         assertThrows(IllegalArgumentException.class, () -> viewer.checkExamResult(employeeId, courseTitle, score));
     }
 }
+
+
